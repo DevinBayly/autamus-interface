@@ -79,3 +79,25 @@ button:active {
 button:focus {
 	border-color: #666;
 }
+
+  .hidden {
+    display: none;
+  }
+
+  #search {
+    margin: 5%;
+  }
+  #middle img {
+    width: 30px;
+    height: 30px;
+  }
+  #middle label {
+    font-weight: bold;
+  }
+  #middle * {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  #searchbar {
+    width: 30%;
+  }
