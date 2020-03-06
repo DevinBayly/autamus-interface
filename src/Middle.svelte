@@ -12,8 +12,6 @@ import Search from "./Search.svelte"
   <hr />
   <div class="holder even">
     <div id="options">
-      <h5>Recently Updated</h5>
-      <div id="recents" />
       <h5>Container Collection</h5>
       <div id="collection" />
     </div>
