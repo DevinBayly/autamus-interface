@@ -1,5 +1,5 @@
 // ? how do I make the parent  and the google file parameters that get filled in later?
-import * as jsyaml from "js-yaml";
+import jsyaml from "js-yaml";
 
 let tile = parent => {
     let ob = {};
