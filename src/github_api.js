@@ -17,9 +17,18 @@
     },
     // use atob on the conntents
     async fetchContents() {
-      this.keysetContent = await fetchWithAuth(this.keyset.url).then(j=> atob(j.content));
+      this.keysetContent = await fetchWithAuth(this.keyset.url).then(j=> atob(j.content).replace(/[ ]+/g," "));
+      // fix multiple spaces craziness
       this.yamlContent = await fetchWithAuth(this.yaml.url).then(j=> atob(j.content));
-    }
+    },
+    makeLinks() {
+      this.links = []
+      let lines = this.keysetContent.split("\n")
+      for(let line of  lines) {
+        let [link,version] = line.split(" ")
+        this.links.push({link:`https://link.arken.io/ipfs/${link}`,version})
+      }
+    },
   });
   export let keysetHandler = () => ({
     async retrieveFiles() {

@@ -35,7 +35,7 @@
 
 <div class="tile" id={`tilenum${searchId}`} on:click={() => {
   wipe()
-  replace(specOb.configInfo)
+  replace(specOb)
 }}>
   <div class="centerer">
     <p class="title">{specOb.name}</p>

@@ -27,6 +27,9 @@ export const containerStore = readable([], async function start(set) {
       console.log(container.yamlContent)
       console.log(jsyaml.safeLoad(container.yamlContent))
       let containerConfigInfo = jsyaml.safeLoad(container.yamlContent)
+      container.makeLinks()
+      containerConfigInfo.srcLinks= container.links
+      // take each line of theh keyset file and turn into an array of link.link link.version objects
       new Tile({
         target: document.querySelector("#collection"),
         props: {
