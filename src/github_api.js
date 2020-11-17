@@ -2,9 +2,6 @@
   let fetchWithAuth = url => {
     return fetch(url, {
       method: "GET",
-      headers: {
-        authorization: "token d747aa41e9c4621616531c7119e3c7ceb4485186"
-      }
     }).then(res => res.json());
   };
   let container = () => ({
@@ -36,9 +33,6 @@
         "https://api.github.com/repos/autamus/container-keyset/git/trees/main?recursive=1",
         {
           method: "GET",
-          headers: {
-            authorization: "token d747aa41e9c4621616531c7119e3c7ceb4485186"
-          }
         }
       ).then(res => res.json());
     },
