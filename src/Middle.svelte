@@ -4,17 +4,24 @@
 import Search from "./Search.svelte"
 </script>
 <style>
+.holder {
+  display:flex;
+  justify-content:center;
+}
+.rows {
+  flex-direction:column;
+  }
 </style>
 
 <div id="middle">
 
      <Search /> 
   <hr />
-  <div class="holder even">
+  <div class="holder rows">
+  <div class="holder">
+    <h5>Container Collection</h5>
+    </div>
     <div id="options">
-      <h5>Recently Updated</h5>
-      <div id="recents" />
-      <h5>Container Collection</h5>
       <div id="collection" />
     </div>
   </div>

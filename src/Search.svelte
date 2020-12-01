@@ -35,10 +35,29 @@
     }
   };
 </script>
+<style>
+  img {
+    width:60px;
+  }
+  .holder {
+    display:flex;
+    justify-content:center;
+  }
+  .center {
+    display:flex;
+    align-items:center;
+    justify-contnent:center;
 
+  }
+  .center * {
+  padding-left:2%;
+  padding-right:2%;
+  }
+
+</style>
 <div id="search">
 
-  <div class="holder center">
+  <div class="center holder">
     <label for="search">Container Search:</label>
     <input bind:value={inputText} type="text" name="search" id="searchbar" />
     <img
