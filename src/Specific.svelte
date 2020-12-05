@@ -2,12 +2,28 @@
   export let ob;
   import ExitSpec from "./ExitSpec.svelte";
   import SrcLink from "./SrcLink.svelte"
+  let ele
+
 </script>
+<style>
+.holder{
+  display:flex;
+  justify-content:center;
+  margin:2%;
+}
+.specific {
+width:80%;
+border-radius:5%;
+background:#eee;
+padding:2%;
+}
+</style>
+<div class="holder" bind:this={ele}>
+  <div class="specific">
 
-<div id="specificPage">
-  <ExitSpec />
+  <ExitSpec {ele} />
 
-  <div id="specHolder" class="holder center">
+  <div id="specHolder"  class="holder center">
     <div id="title" >
       <h1>{ob.name}</h1>
     </div>
@@ -38,5 +54,6 @@
       </div>
       <div id="maintainer">Maintainer: {ob.maintainer}</div>
     </div>
+  </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 <script>
+  import Tile from "./Tile.svelte"
   // populate a section below the search with the container tiles that actually work for the term
   // naive approach use regex match testing
 
@@ -7,10 +8,10 @@
   // iterating to keep names updated
   import { containerStore } from "./ContainerCollectionObserver.js";
 
-  let names;
+  let configs;
 
   let unsubscribe = containerStore.subscribe(v => {
-    names = v;
+    configs = v;
   });
 
   let inputText = "";
@@ -24,13 +25,18 @@
       }
     }
     console.log(inputText);
+    console.log(configs)
     let inputRegex = new RegExp(inputText);
-    for (let i = 0; i < names.length; i++) {
-      let name = names[i];
-      if (inputRegex.exec(name)) {
-        let clone = document.querySelector(`#tilenum${i}`).cloneNode(true);
 
-        document.querySelector("#results").append(clone);
+    for (let i = 0; i < configs.length; i++) {
+      let name = configs[i].name;
+      if (inputRegex.exec(name)) {
+        new Tile ({
+          target:document.querySelector("#results"),
+          props: {
+            specOb:configs[i]
+            }
+        })
       }
     }
   };
@@ -38,6 +44,7 @@
 <style>
   img {
     width:60px;
+    cursor:pointer;
   }
   .holder {
     display:flex;
