@@ -8,7 +8,6 @@
   // iterating to keep names updated
   import { containerStore } from "./ContainerCollectionObserver.js";
 
-  let configs =$containerStore;
 
 
   let inputText = "";
@@ -22,16 +21,16 @@
       }
     }
     console.log(inputText);
-    console.log(configs)
+    console.log($containerStore)
     let inputRegex = new RegExp(inputText);
 
-    for (let i = 0; i < configs.length; i++) {
-      let name = configs[i].name;
+    for (let i = 0; i < $containerStore.length; i++) {
+      let name = $containerStore[i].name;
       if (inputRegex.exec(name)) {
         new Tile ({
           target:document.querySelector("#results"),
           props: {
-            specOb:configs[i]
+            specOb:$containerStore[i]
             }
         })
       }
