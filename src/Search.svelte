@@ -8,11 +8,8 @@
   // iterating to keep names updated
   import { containerStore } from "./ContainerCollectionObserver.js";
 
-  let configs;
+  let configs =$containerStore;
 
-  let unsubscribe = containerStore.subscribe(v => {
-    configs = v;
-  });
 
   let inputText = "";
 
