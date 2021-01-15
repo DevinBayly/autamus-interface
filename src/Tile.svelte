@@ -11,8 +11,7 @@ import {cubicOut} from 'svelte/easing'
   let active = false
 scroll.subscribe(value=> {
 if (active) {
-console.log(value)
-window.scrollTo(0,value*window.innerHeight + current-current*value)
+window.scrollTo(0,value*document.body.scrollHeight + current-current*value)
 }
 if (value == 1) {
 active = false
