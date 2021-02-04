@@ -7,7 +7,8 @@
 
   // iterating to keep names updated
   import { containerStore } from "./ContainerCollectionObserver.js";
-
+  import Empty from "./empty_handed_message.svelte"
+  let resultsDiv
 
 
   let inputText = "";
@@ -15,18 +16,19 @@
   // could also bind to the  input text and trigger this function every time it changes
   let activateSearch = () => {
     // clear the previous entries out
-    if (document.querySelector("#results div")) {
-      for (let d of document.querySelectorAll("#results div")) {
+    if (document.querySelector("#results *")) {
+      for (let d of document.querySelectorAll("#results *")) {
         d.remove();
       }
     }
     console.log(inputText);
     console.log($containerStore)
     let inputRegex = new RegExp(inputText);
-
+    let empty = true
     for (let i = 0; i < $containerStore.length; i++) {
       let name = $containerStore[i].name;
       if (inputRegex.exec(name)) {
+        empty = false
         new Tile ({
           target:document.querySelector("#results"),
           props: {
@@ -34,6 +36,11 @@
             }
         })
       }
+    }
+    if (empty) {
+      let emptyMessageEle = new Empty({
+      target: resultsDiv,
+      })
     }
   };
 </script>
@@ -68,5 +75,5 @@
       alt=""
       on:click={activateSearch} />
   </div>
-  <div id="results" class="holder center" />
+  <div id="results" class="holder center" bind:this={resultsDiv} />
 </div>
