@@ -3,7 +3,8 @@ img.svelte-1j7ub6e.svelte-1j7ub6e{width:60px;cursor:pointer}.holder.svelte-1j7ub
 .holder.svelte-dek3xt{display:flex;justify-content:center;margin:2%}.specific.svelte-dek3xt{width:80%;border-radius:5%;background:#eee;padding:2%}
 .indivLink.svelte-1xpnqry{margin-left:10%;margin-right:10%}
 .tile.svelte-15hz4wa{margin:2%;padding-top:3%;padding-bottom:3%;width:10%;background:#eee;display:flex;justify-content:center;cursor:pointer}.title.svelte-15hz4wa{word-break:break-all;font-size:90%;font-weight:600}
-.holder.svelte-cbmmhl.svelte-cbmmhl{display:flex;justify-content:center;align-items:center}.row.svelte-cbmmhl.svelte-cbmmhl{flex-direction:column}#top.svelte-cbmmhl.svelte-cbmmhl{margin-top:5%;margin-bottom:5%}#description.svelte-cbmmhl.svelte-cbmmhl{margin:2%}#description.svelte-cbmmhl p.svelte-cbmmhl{width:50%
-  }#desc-statement.svelte-cbmmhl.svelte-cbmmhl{font-weight:600}
+.holder.svelte-ljeqt6.svelte-ljeqt6{display:flex;justify-content:center;align-items:center}.row.svelte-ljeqt6.svelte-ljeqt6{flex-direction:column}#top.svelte-ljeqt6.svelte-ljeqt6{margin-top:5%;margin-bottom:5%}#description.svelte-ljeqt6.svelte-ljeqt6{margin:2%}#description.svelte-ljeqt6 p.svelte-ljeqt6{width:50%
+  }#desc-statement.svelte-ljeqt6.svelte-ljeqt6{font-weight:600;text-align:center}
+#aboutContainer.svelte-1c5wiiq{visibility:hidden}#expandAbout.svelte-1c5wiiq{color:blue;text-decoration:underline;cursor:pointer}
 
 /*# sourceMappingURL=bundle.css.map */
